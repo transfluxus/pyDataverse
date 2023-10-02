@@ -206,7 +206,8 @@ class Api:
             Response object of requests library.
 
         """
-        params = {}
+        if not params:
+            params = {}
         params["User-Agent"] = "pydataverse"
         if self.api_token:
             params["key"] = self.api_token
